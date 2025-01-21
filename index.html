@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <link rel="icon" href="THEFODE.png" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minha Linktree</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+</head>
+<body class="bg-gray-900 text-white flex items-center justify-center h-screen relative">
+
+    <!-- Div para Partículas -->
+    <div id="particles-js" class="absolute top-0 left-0 w-full h-full z-0"></div>
+
+    <!-- Fundo animado com ondas -->
+    <div class="absolute top-0 left-0 w-full h-full bg-fixed">
+        <svg class="wave-animation" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" fill="none" preserveaspectratio="none">
+            <path fill="rgba(0, 0, 0, 0.5)" d="M0,64L48,101.3C96,139,192,213,288,213.3C384,213,480,139,576,128C672,117,768,171,864,186.7C960,203,1056,181,1152,181.3C1248,181,1344,203,1392,213.3L1440,224V0H1392C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0H0V64Z"></path>
+        </svg>
+    </div>
+
+    <!-- Áudio -->
+    <audio id="audioPlayer" loop>
+        <source src="[Non-Copyrighted Music] Chill Jazzy Lofi Hip Hop (Royalty Free) Jazz hop Music.mp3" type="audio/mp3">
+        Seu navegador não suporta o áudio.
+    </audio>
+    
+    <!-- Botão de áudio no canto inferior direito -->
+    <button id="toggleAudio" class="bg-gray-700 text-white rounded-full p-3 fixed bottom-4 right-4 shadow-lg hover:bg-gray-600 transition duration-300 z-10">
+        🎶
+    </button>
+    
+    <script>
+        const audio = document.getElementById("audioPlayer");
+        const toggleButton = document.getElementById("toggleAudio");
+    
+        // Função para tocar áudio ao clicar em qualquer parte da página
+        window.addEventListener('click', () => {
+            // Reproduz a música quando qualquer parte da página for clicada
+            if (audio.paused) {
+                audio.play();
+            }
+        });
+    
+        // Botão para alternar entre play e pause
+        toggleButton.addEventListener("click", () => {
+            if (audio.paused) {
+                audio.play();  // Se estiver pausado, toca
+            } else {
+                audio.pause(); // Se estiver tocando, pausa
+            }
+        });
+    </script>
+    
+    <!-- Conteúdo da Linktree -->
+    <div class="w-80 sm:w-72 md:w-80 lg:w-96 xl:w-96 text-center animate-fade-in relative z-10">
+        <img src="vencer.jpg" alt="Avatar" 
+            class="w-24 h-24 mx-auto rounded-full border-4 border-gray-700 hover:scale-110 transition-transform duration-300">
+        <h1 class="text-2xl font-bold mt-4 animate-pulse">HASz</h1>
+        <p class="text-gray-400 mb-8">Youtuber / Streaming / Developer Web / Estudante Técnico</p>
+        
+        <div class="mt-6 space-y-6">
+            <a href="https://www.youtube.com/@Hasteira/featured" 
+                class="block py-3 px-6 bg-gradient-to-r from-red-600 to-red-800 text-white rounded-full shadow-xl hover:bg-red-500 transition duration-300 transform hover:scale-105">
+                <span class="text-xl font-semibold">🎥 YouTube</span>
+            </a>
+            <a href="https://www.twitch.tv/Hasteira" 
+                class="block py-3 px-6 bg-gradient-to-r from-purple-600 to-purple-800 text-white rounded-full shadow-xl hover:bg-purple-500 transition duration-300 transform hover:scale-105">
+                <span class="text-xl font-semibold">🎮 Twitch</span>
+            </a>
+            <a href="https://github.com/ItaloSilvaHAS" 
+                class="block py-3 px-6 bg-gradient-to-r from-pink-600 to-pink-800 text-white rounded-full shadow-xl hover:bg-pink-500 transition duration-300 transform hover:scale-105">
+                <span class="text-xl font-semibold">🔗 GitHub</span>
+            </a>
+            <a href="https://spontaneous-maamoul-8b6e86.netlify.app/" 
+                class="block py-3 px-6 bg-gradient-to-r from-green-600 to-green-800 text-white rounded-full shadow-xl hover:bg-green-500 transition duration-300 transform hover:scale-105">
+                <span class="text-xl font-semibold">🌟 Portfólio</span>
+            </a>
+        </div>
+
+        <footer class="mt-8 text-gray-400">
+            <p>Feito com 💻 por HASz</p>
+        </footer>
+    </div>
+
+    <style>
+        @keyframes fade-in {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in {
+            animation: fade-in 1s ease-out;
+        }
+
+        .wave-animation {
+            animation: wave 10s infinite linear;
+        }
+
+        @keyframes wave {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+        /* Partículas */
+        #particles-js {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+
+    <script>
+        particlesJS('particles-js', {
+            particles: {
+                number: {
+                    value: 50,
+                    density: {
+                        enable: true,
+                        value_area: 800
+                    }
+                },
+                color: {
+                    value: "#ffffff"
+                },
+                shape: {
+                    type: "circle"
+                },
+                opacity: {
+                    value: 0.5,
+                    random: true
+                },
+                size: {
+                    value: 2,
+                    random: true
+                },
+                move: {
+                    enable: true,
+                    speed: 1,
+                    direction: "none",
+                    random: true,
+                    straight: false,
+                    out_mode: "out"
+                }
+            },
+            interactivity: {
+                events: {
+                    onhover: {
+                        enable: true,
+                        mode: "repulse"
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
